@@ -29,8 +29,13 @@ module derelict.glfw3.types;
 
 enum {
     GLFW_VERSION_MAJOR = 3,
-    GLFW_VERSION_MINOR = 1,
+    GLFW_VERSION_MINOR = 2,
     GLFW_VERSION_REVISION = 0
+}
+
+enum {
+    GLFW_TRUE = 1,
+    GLFW_FALSE = 0
 }
 
 enum {
@@ -233,6 +238,7 @@ enum {
     GLFW_DECORATED = 0x00020005,
     GLFW_AUTO_ICONIFY = 0x00020006,
     GLFW_FLOATING = 0x00020007,
+	GLFW_MAXIMIZED = 0x00020008,
 
     GLFW_RED_BITS = 0x00021001,
     GLFW_GREEN_BITS = 0x00021002,
@@ -260,7 +266,9 @@ enum {
     GLFW_OPENGL_DEBUG_CONTEXT = 0x00022007,
     GLFW_OPENGL_PROFILE = 0x00022008,
     GLFW_CONTEXT_RELEASE_BEHAVIOR = 0x00022009,
+	GLFW_CONTEXT_NO_ERROR = 0x0002200A,
 
+	GLFW_NO_API = 0,
     GLFW_OPENGL_API = 0x00030001,
     GLFW_OPENGL_ES_API = 0x00030002,
 
@@ -298,6 +306,7 @@ enum {
 }
 
 extern(C) @nogc nothrow alias void function() GLFWglproc;
+extern(C) @nogc nothrow alias void function() GLFWvkproc;
 
 struct GLFWmonitor;
 struct GLFWwindow;
